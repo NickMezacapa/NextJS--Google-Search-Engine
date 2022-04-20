@@ -11,13 +11,13 @@ export default function Home() {
 	// Router for search redirect
 	const router = useRouter();
 
-	// Reference for text inside input field
+	// Connecting a reference to search input value for user to load a new search term
 	const searchInputRef = useRef(null);
 
 	// Search button functionality
 	const search = (e) => {
 		e.preventDefault();
-		const term = searchInputRef.current.value;
+		const term = searchInputRef.current.value; // Get value from input field
 
 		if (!term) return; // No action if there is no input
 		router.push(`/search?term=${term}`); // Redirect to search page based on input value
@@ -58,7 +58,7 @@ export default function Home() {
 				<div className="flex w-full mt-5 hover:shadow-lg focus-within:shadow-lg max-w-md rounded-full border border-gray-200 px-5 py-3 items-center sm:max-w-xl lg:max-w-2xl">
 					<SearchIcon className="h-5 mr-3 text-gray-500" />
 					<input
-						ref={searchInputRef}
+						ref={searchInputRef} // Connecting a reference to search input value for user to load a new search term
 						type="text"
 						className="focus:outline-none flex-grow"
 					/>

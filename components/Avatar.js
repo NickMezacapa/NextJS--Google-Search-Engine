@@ -1,5 +1,7 @@
 /* import React from 'react'
  */
+
+// Hard code avatar appearance when signed in.
 const Avatar = ({ url, className }) => {
 	return (
 		<img
